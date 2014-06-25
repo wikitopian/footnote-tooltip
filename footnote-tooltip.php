@@ -12,7 +12,13 @@
 class Footnote_Tooltip {
 
 	public function __construct() {
+		add_filter( 'the_content', array( &$this, 'do_footnote' ), 0 );
+	}
+	public function do_footnote( $content = '' ) {
 
+
+
+		return $content;
 	}
 }
 $footnote_tooltip = new Footnote_Tooltip();
