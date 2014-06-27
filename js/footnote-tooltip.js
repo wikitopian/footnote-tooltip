@@ -1,3 +1,7 @@
 jQuery( document ).ready( function($) {
-    console.log( 'Footnote Tooltip' );
+	$( 'div.footnotes > ol > li' ).each(
+		function( i, footnote ) {
+			console.dir( footnote );
+		}
+	);
 });
