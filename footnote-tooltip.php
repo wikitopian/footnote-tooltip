@@ -12,6 +12,20 @@
 class Footnote_Tooltip {
 
 	public function __construct() {
+		add_action( 'wp_enqueue_scripts', array( &$this, 'do_script' ) );
+	}
+
+	public function do_script() {
+
+		wp_register_script(
+			'footnote_tooltip',
+			plugins_url( '/js/footnote-tooltip.js', __FILE__ ),
+			array( 'jquery-ui-tooltip' ),
+			false,
+			true
+		);
+
+		wp_enqueue_script( 'footnote_tooltip' );
 
 	}
 }
