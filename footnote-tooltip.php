@@ -25,6 +25,8 @@ class Footnote_Tooltip {
 			true
 		);
 
+		wp_enqueue_script( 'footnote_tooltip' );
+
 		global $wp_scripts;
 		wp_enqueue_style(
 			'jquery-ui-css',
@@ -33,7 +35,11 @@ class Footnote_Tooltip {
 			. '/themes/ui-lightness/jquery-ui.min.css'
 		);
 
-		wp_enqueue_script( 'footnote_tooltip' );
+		wp_register_style(
+			'footnote_tooltip',
+			plugins_url( '/css/footnote-tooltip.css', __FILE__ )
+		);
+		wp_enqueue_style( 'footnote_tooltip' );
 
 	}
 }
