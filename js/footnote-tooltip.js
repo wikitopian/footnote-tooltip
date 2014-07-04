@@ -10,6 +10,7 @@ jQuery( document ).ready( function($) {
 			var footnote_html = footnote.innerHTML;
 			footnote_html = footnote_html.replace( /<a href="#[^>]+>[\s\S]<\/a>/g, '' );
 			footnote_html = footnote_html.replace( /[\s\s]/g, ' ' );
+			footnote_html = footnote_html.replace( /&[^;]+?;/g, ' ' );
 
 			footnote_tooltip_footnotes[footnote.id] = footnote_html;
 		}
@@ -39,9 +40,14 @@ jQuery( document ).ready( function($) {
 			$( footnote_link ).click( function( event ) {
 				event.preventDefault();
 
-				var footnote_dialog = $( '#footnote_tooltip_' + this.hash.replace( /#/, '' ) );
+				var footnote_id = this.hash.replace( /#/, '' );
+
+				var footnote_dialog = $( '#footnote_tooltip_' + footnote_id );
+
+				var footnote_number = footnote_id.replace( /([^-]+?)-([^-]+?)-(.*)/, '$3' );
 
 				footnote_dialog.dialog({
+					title: 'Footnote ' + footnote_number,
 					modal: true,
 				});
 
