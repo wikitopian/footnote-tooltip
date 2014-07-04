@@ -11,6 +11,7 @@ jQuery( document ).ready( function($) {
 			footnote_html = footnote_html.replace( /<a href="#[^>]+>[\s\S]<\/a>/g, '' );
 			footnote_html = footnote_html.replace( /[\s\s]/g, ' ' );
 			footnote_html = footnote_html.replace( /&[^;]+?;/g, ' ' );
+			footnote_html = footnote_html.replace( /<[^>]*?>/g, '' );
 
 			footnote_tooltip_footnotes[footnote.id] = footnote_html;
 		}
