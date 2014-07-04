@@ -4,7 +4,20 @@ div.footnotes {
 .ui-tooltip {
 	padding: 10px 20px;
 	color: black;
+	background-color: white;
 	border-radius: 20px;
 	text-transform: uppercase;
 	box-shadow: 0 0 7px black;
+}
+
+.ui-dialog {
+	color: black;
+	background-color: white;
+	background-image: none;
+}
+
+.ui-widget-content {
+	color: black;
+	background-color: white;
+	background-image: none;
 }

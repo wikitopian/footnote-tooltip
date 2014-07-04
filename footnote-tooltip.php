@@ -20,7 +20,7 @@ class Footnote_Tooltip {
 		wp_register_script(
 			'footnote_tooltip',
 			plugins_url( '/js/footnote-tooltip.js', __FILE__ ),
-			array( 'jquery-ui-tooltip' ),
+			array( 'jquery-ui-tooltip', 'jquery-ui-dialog' ),
 			false,
 			true
 		);

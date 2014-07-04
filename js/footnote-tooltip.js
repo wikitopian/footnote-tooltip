@@ -23,7 +23,30 @@ jQuery( document ).ready( function($) {
 
 			$( footnote_link ).attr( 'title', footnote_text );
 			$( footnote_link ).tooltip();
-			console.dir( footnote_link );
+
+			var footnote_dialog = $(
+				'<div id="footnote_tooltip_'
+				+ footnote_id
+				+ '">'
+				+footnote_text
+				+'</div>'
+			).appendTo('body');
+
+			footnote_dialog.hide();
+
+			var footnote_dialog = $( '#footnote_tooltip_' + footnote_id );
+
+			$( footnote_link ).click( function( event ) {
+				event.preventDefault();
+
+				var footnote_dialog = $( '#footnote_tooltip_' + this.hash.replace( /#/, '' ) );
+
+				footnote_dialog.dialog({
+					modal: true,
+				});
+
+			});
+
 		}
 	);
 
